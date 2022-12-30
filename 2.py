@@ -8,9 +8,9 @@ db = mysql.connector.connect(
     host = 'localhost',
     user = 'root',
     password = 'admin'
-)
+) 
 
-create_db = "CREATE DATABASE students"
+create_db = "CREATE DATABASE students_db"
 
 mycursor = db.cursor()
 
