@@ -80,7 +80,7 @@ def open_file(file_name):
     
 
 def continue_function():
-    input('Press Enter to continue [This will clear the screen]...)
+    input('Press Enter to continue [This will clear the screen]...')
     # To clear the screen
     os.system('cls')
 
