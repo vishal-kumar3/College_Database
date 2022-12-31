@@ -55,6 +55,7 @@ def sql_print():
 
 # To identify what machine is used to run this program
 def get_platform():
+    # Trying to find out which platform is used to run this program
     platforms = {
         'linux1' : 'Linux',
         'linux2' : 'Linux',
@@ -74,11 +75,14 @@ else:
 
 # To open any file from python using subprocess
 def open_file(file_name):
+    # opening the file using subprocess
     subprocess.run(['start', file_name], shell=True)
     
 
 def continue_function():
-    input('Press Enter to continue...')
+    input('Press Enter to continue [This will clear the screen]...)
+    # To clear the screen
+    os.system('cls')
 
 
 # To create new table if needed
@@ -335,10 +339,11 @@ def students_marks():
             # writing into csv file
             writer.writerow({'UID': x[global_uid], 'FullName': x[global_name], 'Course': x[global_course], 'Marks': x[global_marks], 'Grade': grade})
 
-
+    # getting the path of marks.csv
     print('File Saved at ', os.getcwd() + fileName + 'marks.csv')
     
     try:
+        # opening the file marks.csv 
         open_file("marks.csv")
     except:
         pass
@@ -420,19 +425,20 @@ while choice != 0:
 
     choice = int(input('StudentDataBase> '))
     
+    # To register student details in Database
     if choice == 1 :
         print('\nWrite Full Details Here...')
         insert_data()
         continue_function()
 
-
+    # To update marks of students
     elif choice == 2 :
         print('\nUpdate Marks Here...')
         # Marks
         examination()
         continue_function()
 
-
+    # To filter students on base of their department
     elif choice == 3 :
         print('Students By Department:-\n')
 
@@ -447,7 +453,7 @@ while choice != 0:
         sql_print()
         continue_function()
 
-
+    # To filter students on base of their Course
     elif choice == 4 :
         print('Student By Course:-\n')
 
@@ -462,7 +468,7 @@ while choice != 0:
         sql_print()
         continue_function()
 
-
+    # This provides full details of all students
     elif choice == 5:
         print('\nListing Student\'s Deatails here...\n')
         print('(UID | SttID | FullName | Roll | Department | Batch | Course | Mark)')
@@ -470,13 +476,13 @@ while choice != 0:
         sql_print()
         continue_function()
 
-
+    # This provides marks of all students
     elif choice ==  6:
         print('\nGrade of Students: ')
         students_marks()
         continue_function()
 
-
+    # This provides Marks and reportCard of individual students
     elif choice == 7 :
 
         # if you have updated all students marks
@@ -485,6 +491,14 @@ while choice != 0:
         if yes == 'n':
             print('First Update Marks And Come Back...') 
             examination() # jump to examination portal or update marks portal
+
+        # Getting 
+        print('\n')
+        print(UID | StudentID | FullName)
+        mycursor.execute(students_details)
+        result = mycursor.fetchall()
+        for x in result:
+            print(x[global_uid], x[global_studentID], x[global_name])
 
         print('\nReport Card Generator...\n')
         uniID = int(input('Enter UID of student: '))
@@ -497,11 +511,11 @@ while choice != 0:
         open_file(f'{Name}ReportCard.txt')
         continue_function()
 
-
+    # Graph 
     elif choice == 8 :
         graph()
         
-
+    # To exit program
     elif choice == 0 :
         pass
 
@@ -513,4 +527,3 @@ while choice != 0:
 print('Exiting Program...')
 
 db.close()
-
