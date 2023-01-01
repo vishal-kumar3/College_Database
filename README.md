@@ -1,7 +1,9 @@
 
 # Project Title
 
-A simple command line based program for College Student Managements
+A simple command line based program for College Student Managements.
+This Program is mostly written in Python as well as sql.
+Used python for the logic purpose and sql for Database to store all details of students.
 
 ## 1. Installing Mysql
 
