@@ -35,3 +35,19 @@ python CreateStudent_tb.py
 # Here All Commands Are Listed To Manage Students
 python StudentManager.py
 ```
+
+## 4. Preview
+
+![Options](https://user-images.githubusercontent.com/121259738/210237865-c5bdd61f-b0f3-42e1-8a28-6c9602dec9b9.png)
+
+- Select 1 > To register new student information
+- Select 2 > To update new student's mark
+- Select 3 > To filter student using their department
+- Select 4 > To filter student using their course
+- Select 5 > To get full information of all students
+- Select 6 > To get mark of all students 
+- Select 7 > To get report card of perticular student
+- Select 8 > To get graphical analysis of all student's mark
+- Select 0 > To exit program
+
+
